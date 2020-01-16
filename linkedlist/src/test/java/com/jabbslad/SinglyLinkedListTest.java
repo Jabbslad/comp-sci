@@ -2,8 +2,7 @@ package com.jabbslad;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class SinglyLinkedListTest {
 
@@ -22,8 +21,18 @@ public class SinglyLinkedListTest {
 
     @Test
     public void remove() {
-        SinglyLinkedList list = SinglyLinkedList.of(1, 2, 3);
+        SinglyLinkedList<Integer> list = SinglyLinkedList.of(1, 2, 3);
         list.remove(2);
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    public void add() {
+        SinglyLinkedList<Integer> list = SinglyLinkedList.of(1);
+        list.add(2);
+        SinglyLinkedNode<Integer> head = list.head();
+        assertTrue(1 == head.val);
+        assertTrue(2 == head.next.val);
         assertEquals(2, list.size());
     }
 }

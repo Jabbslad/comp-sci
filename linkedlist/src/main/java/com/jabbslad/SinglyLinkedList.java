@@ -4,6 +4,7 @@ public class SinglyLinkedList<T> {
 
     private SinglyLinkedNode<T> head;
 
+    @SafeVarargs
     public static <T> SinglyLinkedList<T> of(T... items) {
         SinglyLinkedList<T> result = new SinglyLinkedList<>();
         SinglyLinkedNode<T> curr = null;
@@ -37,6 +38,24 @@ public class SinglyLinkedList<T> {
                 curr = curr.next;
             }
         }
+    }
+
+    public SinglyLinkedNode<T> head() {
+        return this.head;
+    }
+
+    public void add(T item) {
+        SinglyLinkedNode<T> newNode = new SinglyLinkedNode<>(item);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        SinglyLinkedNode<T> curr = head;
+        while (curr.next != null) {
+            curr = curr.next;
+        }
+        curr.next = newNode;
     }
 
     public long size() {
