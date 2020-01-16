@@ -26,4 +26,20 @@ public class InOrder {
 
         return result;
     }
+
+    private static <T> void traverseRecursive(List<T> result, TreeNode<T> curr) {
+        if (curr == null)
+            return;
+
+        traverseRecursive(result, curr.left);
+        result.add(curr.val);
+        traverseRecursive(curr.right);
+    }
+
+    public static <T> List<T> traverseRecursive(TreeNode<T> root) {
+        List<T> result = new LinkedList<>();
+        traverseRecursive(result, root);
+        return result;
+    }
+
 }
