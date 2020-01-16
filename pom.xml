@@ -21,7 +21,7 @@
 
   <modules>
     <module>binary-tree</module>
-    <module>linkedlist</module>
+    <module>linked-list</module>
   </modules>
 
   <dependencies>
