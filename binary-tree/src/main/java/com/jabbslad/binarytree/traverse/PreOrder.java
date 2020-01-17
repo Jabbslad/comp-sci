@@ -27,4 +27,20 @@ public class PreOrder {
         }
         return result;
     }
+
+    private static <T> void traverseRecursive(List<T> list, TreeNode<T> root) {
+        if (root == null)
+            return;
+
+        list.add(root.val);
+        traverseRecursive(list, root.left);
+        traverseRecursive(list, root.right);
+
+    }
+
+    public static <T> List<T> traverseRecursive(TreeNode<T> root) {
+        List<T> list = new LinkedList<>();
+        traverseRecursive(list, root);
+        return list;
+    }
 }
