@@ -28,4 +28,19 @@ public class PostOrder {
 
         return result;
     }
+
+    private static <T> void traverseRecursive(List<T> list, TreeNode<T> root) {
+        if (root == null)
+            return;
+
+        traverseRecursive(list, root.left);
+        traverseRecursive(list, root.right);
+        list.add(root.val);
+    }
+
+    public static <T> List<T> traverseRecursive(TreeNode<T> root) {
+        List<T> list = new LinkedList<>();
+        traverseRecursive(list, root);
+        return list;
+    }
 }
