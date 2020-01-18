@@ -35,7 +35,6 @@ public class PreOrder {
         list.add(root.val);
         traverseRecursive(list, root.left);
         traverseRecursive(list, root.right);
-
     }
 
     public static <T> List<T> traverseRecursive(TreeNode<T> root) {
