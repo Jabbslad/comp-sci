@@ -9,6 +9,7 @@ import java.util.List;
 public class PreOrder {
     public static <T> List<T> traverseIterative(TreeNode<T> root) {
         List<T> result = new LinkedList<>();
+        
         if (root == null)
             return result;
 
